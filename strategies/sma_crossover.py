@@ -21,7 +21,7 @@ class SMACrossoverStrategy(BaseStrategy):
         self.prices = []
     def generate_signal(self, row):
         # Append the latest closing price
-        self.prices.append(row['Close'])
+        self.prices.append(row['close'])  # Changed from 'Close' to 'close'
         # Wait until enough data is available for both SMAs
         if len(self.prices) < self.long_window:
             return 0  # Hold
